@@ -17,7 +17,7 @@ class App.Friend extends Spine.Model
     @selected = !@selected
     @save()
     
-  validate: ->
+  validate: ->    
     count = @constructor.selected().length + 1
     if @selected and count > @constructor.limit
       return 'Too many selected'

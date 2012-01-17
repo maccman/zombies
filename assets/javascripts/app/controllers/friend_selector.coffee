@@ -15,7 +15,7 @@ class FriendItem extends Spine.Controller
     @el
     
   toggle: ->
-    @record.toggle()
+    @record.clone().toggle()
     
   filter: (query) ->
     @el.toggle @record.filter(query)

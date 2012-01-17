@@ -16,11 +16,11 @@ class TeamItem extends Spine.Controller
     
   save: ->
     @record.use = @input.val()
-    @record.save()
+    @record = @record.save()
     
   remove: ->
     @record.selected = false
-    @record.save()
+    @record = @record.save()
 
 class App.TeamSelector extends Spine.Controller
   className: 'teamSelector'
@@ -30,6 +30,7 @@ class App.TeamSelector extends Spine.Controller
     
   constructor: ->
     super
+    @render()
     App.Friend.bind 'refresh change', @render
   
   render:  =>
@@ -40,4 +41,4 @@ class App.TeamSelector extends Spine.Controller
       item = new TeamItem(record: record)
       @itemsEl.append(item.render())
     
-    @el.toggleClass('empty', !!records.length)
+    @el.toggleClass('empty', !records.length)

@@ -6,6 +6,12 @@
   border: 1px solid rgba(0, 0, 0, 0.2)
   -webkit-user-select: none
   
+  &.empty .items::after
+    content: 'Empty...'
+    display: block
+    padding: 8px 0 3px
+    text-align: center
+  
   header
     height: 30px
     line-height: 30px

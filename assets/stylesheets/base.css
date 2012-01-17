@@ -46,6 +46,10 @@ h1 {
   padding: 2px 0 8px;
 }
 
+#header h2 {
+  font-size: 1.3em;
+}
+
 #header #picture + div {
   margin-left: 82px;
 }
