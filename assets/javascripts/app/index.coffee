@@ -10,7 +10,18 @@
 
 $ = jQuery
 
-class App extends Spine.Controller  
+$.postJSON = (url, data) ->
+  $.ajax
+    type: 'POST'
+    url: url
+    data: JSON.stringify(data)
+    contentType: 'application/json'
+    processData: false
+
+class App extends Spine.Controller
+  events:
+    'click .create button': 'create'
+  
   constructor: ->
     super
     
@@ -21,7 +32,18 @@ class App extends Spine.Controller
     @append @teamSelector
     
     create = $('<article />').addClass('create')
-    create.append($('<a />').text('Create your team!').addClass('cta'))
+    create.append($('<button />').text('Create your team!'))
     @append create
+    
+  create: (e) ->
+    selected = App.Friend.selected()
+    limit    = App.Friend.limit
+    if selected.length < limit
+      return alert("You need to select #{limit} friends")
+    
+    $(e.target).attr('disabled', 'disabled')
+    
+    $.postJSON('/team', selected).success ->
+      alert('Created!')
 
 window.App = App

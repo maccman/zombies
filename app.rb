@@ -25,7 +25,7 @@ class App < Sinatra::Base
   set :show_exceptions, true
   set :sprockets, Sprockets::Environment.new(root)
   set :precompile, [ /\w+\.(?!js|css).+/, /application.(css|js)$/ ]
-  set :facebook_scope, "user_likes,user_photos,user_photo_video_tags"
+  set :facebook_scope, "publish_stream"
   
   enable :sessions
 
@@ -87,7 +87,7 @@ class App < Sinatra::Base
     end
     
     def user
-      @user = Mogli::User.find("me", client)
+      @user ||= Mogli::User.find("me", client)
     end
   end
 
@@ -107,7 +107,7 @@ class App < Sinatra::Base
     erb :index
   end
   
-  get "/friends.json" do
+  get "/friends" do
     friends = user.friends.map {|friend|
       {
         name: friend.name.to_s,
@@ -117,6 +117,10 @@ class App < Sinatra::Base
       }
     }
     json friends
+  end
+  
+  post "/team" do
+    "ok"
   end
 
   # used by Canvas apps - redirect the POST to be a regular GET

@@ -44,7 +44,7 @@ class App.FriendSelector extends Spine.Controller
     
   load: ->
     @el.addClass('loading')
-    $.getJSON '/friends.json', (records) =>
+    $.getJSON '/friends', (records) =>
       @el.removeClass('loading')
       App.Friend.refresh(records)
     
