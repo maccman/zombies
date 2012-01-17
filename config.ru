@@ -1,7 +1,9 @@
-require "rubygems"
-require "bundler"
+require './app'
 
-Bundler.require
+map "/assets" do
+  run App.sprockets
+end
 
-require "./app"
-run Sinatra::Application
+map "/" do
+  run App
+end

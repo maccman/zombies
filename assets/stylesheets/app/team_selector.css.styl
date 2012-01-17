@@ -1,0 +1,51 @@
+@import '../mixins'
+
+.teamSelector
+  width: 670px
+  margin 30px auto
+  border: 1px solid rgba(0, 0, 0, 0.2)
+  -webkit-user-select: none
+  
+  header
+    height: 30px
+    line-height: 30px
+    padding: 0 10px
+    vbg-gradient(#FDFDFD, #EAEBEB)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+    
+    h2
+      font-weight: bold
+      font-size: 13px
+      color: #515151
+      text-shadow: 0 1px #FFF
+    
+  .items
+    font-size: 12px
+    padding: 0 0 5px 5px
+  
+    div
+      margin: 5px 5px 0 0
+      padding: 5px
+      overflow: hidden
+      
+      span.left
+        display: block
+        float: left
+        
+      span.name
+        display: block
+        ellipsis()
+        width: 150px
+        
+      a.remove
+        display: block
+        
+      input
+        float: left
+        font-size: 13px
+        padding: 5px
+        width: 300px
+      
+      img
+        float: left
+        margin-right: 8px

@@ -1,0 +1,4 @@
+<div class="item">
+  <img src="<%= @avatar_url %>" alt="<%= @name %>">
+  <%= @name %>
+</div>

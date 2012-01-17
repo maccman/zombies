@@ -1,0 +1,8 @@
+<div class="item">
+  <img src="<%= @avatar_url %>" alt="<%= @name %>">
+  <span class="left">
+    <span class="name"><%= @name %></span>
+    <a class="remove">Remove</a>
+  </span>
+  <input type="text" placeholder="How are they useful?" value="<%= @use %>">
+</div>

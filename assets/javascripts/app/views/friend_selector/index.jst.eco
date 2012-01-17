@@ -1,0 +1,6 @@
+<header>
+  <input type="search" results="0" placeholder="Find friends..." incremental="true">
+  <div class="status">0 out of <%= @limit %> friends selected</div>
+</header>
+
+<div class="items"></div>
