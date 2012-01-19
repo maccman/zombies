@@ -16,11 +16,13 @@ class TeamItem extends Spine.Controller
     
   save: ->
     @record.use = @input.val()
-    @record = @record.save()
+    @record.save()
+    @record = @record.reload()
     
   remove: ->
     @record.selected = false
-    @record = @record.save()
+    @record.save()
+    @record = @record.reload()
 
 class App.TeamSelector extends Spine.Controller
   className: 'teamSelector'

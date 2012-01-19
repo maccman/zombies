@@ -37,17 +37,19 @@ h1 {
 #header {
   overflow: hidden;
   font-size: 11px;
-  padding: 24px 18px 0;
+  margin: 24px 18px 0;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px;
 }
 
 #header h1 {
-  border-bottom: 2px solid #e9e9e9;
-  margin: 0 0 9px;
+  margin: 5px 0 0px;
   padding: 2px 0 8px;
 }
 
 #header h2 {
   font-size: 1.3em;
+  color: #656565;
 }
 
 #header #picture + div {
