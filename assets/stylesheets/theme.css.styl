@@ -1,15 +1,12 @@
 @import './mixins'
 
-#article
-  background: url('http://images.alphacoders.com/145/145407.jpg') no-repeat;
-
 a
   cursor: pointer
   font-size: 12px
   color: #668EC6
   font-weight: bold
   text-shadow: 0 1px white
-  
+
   &:hover
     text-decoration: none
 
@@ -46,7 +43,7 @@ input[type=text]
 
 input[type=search]
   outline: none
-  
+
 button, a.cta
   line-height: 1em
   display: inline-block
@@ -65,7 +62,7 @@ button, a.cta
   vbg-gradient(lighten(#F4F4F4, 10%), darken(#F4F4F4, 5%))
 
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), color-stop(0.5, rgba(255, 255, 255, 0.5)), color-stop(0.5, rgba(255, 255, 255, 0))), darken(#F4F4F4, 5%)
-  -webkit-box-shadow: inset 0 1px 0 #FFF, 0 1px 2px rgba(0, 0, 0, 0.2)  
+  -webkit-box-shadow: inset 0 1px 0 #FFF, 0 1px 2px rgba(0, 0, 0, 0.2)
 
   &.default
     border-color: rgba(104, 189, 244, 0.8)
@@ -78,6 +75,6 @@ button, a.cta
     -webkit-box-shadow: inset 0 3px 15px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.1)
     -moz-box-shadow: inset 0 3px 15px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.1)
     box-shadow: inset 0 3px 15px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.1)
-    
+
   &:disabled
     opacity: 0.5
